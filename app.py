@@ -46,7 +46,7 @@ I can create **temp emails** for you. Send /new to **create new mail** !
 
 Send /domains to get list of Available Domains.
 
-**Developer** : @selfiebd | @Groupdcbots 
+**Developer** : @soonbotmaker0
 """
 
 CHANNEL_ID = int(os.environ['CHANNEL_ID'])
@@ -56,11 +56,11 @@ OWNER = int(os.environ['OWNER'])
 start_button = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("👥 Group", url="https://t.me/Groupdcs"),
-                    InlineKeyboardButton("🗣 Channel", url="https://t.me/Groupdcbots")
+                    InlineKeyboardButton("🤖 Developer", url="https://t.me/soonbotmaker0"),
+                    InlineKeyboardButton("🗣 Channel", url="https://t.me/mittalbots")
                 ],
 		        [
-                    InlineKeyboardButton("➕ Add to Your Group ➕", url=f"http://t.me/TempMailDcBot?startgroup=new"),
+                    InlineKeyboardButton("➕ Add to Your Group ➕", url=f"http://t.me/Temp_mail_vipbot?startgroup=new"),
                 ]    
             ]
 )
@@ -99,7 +99,7 @@ API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Groupdcbots ⚡", url="https://t.me/groupdcbots")]])
+            [[InlineKeyboardButton("Bot update ⚡", url="https://t.me/mittalbots")]])
 
 #********************************************************************************
 @app.on_message(filters.command("new"))
@@ -117,7 +117,7 @@ async def fakemailgen(_, message: Message):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-♨️ **Powered by** : @groupdcbots """,
+♨️ **Powered by** : @mittalbots """,
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
@@ -157,7 +157,7 @@ async def mail_box(_, query : CallbackQuery):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
-**♨️ Powered by** : @Groupdcbots""",
+**♨️ Powered by** : @mittalbots""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
@@ -307,7 +307,7 @@ Want to promote your online business ? Want to get people engagement? We are her
 
 Promote whatever you want at lowest and affordable prices.
 
-https://t.me/Groupdcs 
+https://t.me/mittalbots 
 
 🔥Your broadcast will reach group also so minimum 50k users see your message.
 """)
