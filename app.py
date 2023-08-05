@@ -41,12 +41,12 @@ I can create **temp emails** for you. Send /new to **create new mail** !
 
 **Advantages**
    • None Blacklisted Domains(Fresh Domains).
-   • [API](https://www.1secmail.com/api/v1/) base Email box .
+   • [API](https://t.me/Bot_update_i) base Email box .
    • 24 hours Active (paid hosting).
 
 Send /domains to get list of Available Domains.
 
-**Developer** : @soonbotmaker0
+**Developer** : @soonbotmaker0 | @Bot_update_i
 """
 
 CHANNEL_ID = int(os.environ['CHANNEL_ID'])
@@ -57,7 +57,7 @@ start_button = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("🤖 Developer", url="https://t.me/soonbotmaker0"),
-                    InlineKeyboardButton("🗣 Channel", url="https://t.me/mittalbots")
+                    InlineKeyboardButton("🗣 Channel", url="https://t.me/Bot_update_i")
                 ],
 		        [
                     InlineKeyboardButton("➕ Add to Your Group ➕", url=f"http://t.me/Temp_mail_vipbot?startgroup=new"),
@@ -93,13 +93,13 @@ You must,
     return await add_served_user(message.from_user.id) 
     
 #********************************************************************************
-API1='https://www.1secmail.com/api/v1/?action=getDomainList'
-API2='https://www.1secmail.com/api/v1/?action=getMessages&login='
-API3='https://www.1secmail.com/api/v1/?action=readMessage&login='
+API1='https://api.internal.temp-mail.io/api/v3/?action=getDomainList'
+API2='https://api.internal.temp-mail.io/api/v3/?action=getMessages&login='
+API3='https://api.internal.temp-mail.io/api/v3/?action=readMessage&login='
 #********************************************************************************
 
 create = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Bot update ⚡", url="https://t.me/mittalbots")]])
+            [[InlineKeyboardButton("Bot update ⚡", url="https://t.me/Bot_update_i")]])
 
 #********************************************************************************
 @app.on_message(filters.command("new"))
@@ -117,7 +117,7 @@ async def fakemailgen(_, message: Message):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{email}@{domain}`
 📨 **Mail BOX** : `empty`
-♨️ **Powered by** : @mittalbots """,
+♨️ **Powered by** : @Bot_update_i """,
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("♻️ Update Mail BOX ♻️", callback_data = f"mailbox |{email}|{domain}")]]))
     pi = await mes.pin(disable_notification=True, both_sides=True)
     await m.delete()
@@ -157,7 +157,7 @@ async def mail_box(_, query : CallbackQuery):
 **📬 Done,Your Email Address Created!**
 📧 **Email** : `{smail}`
 📨 **Mail BOX** : ✅
-**♨️ Powered by** : @mittalbots""",
+**♨️ Powered by** : @Bot_update_i""",
 reply_markup = mbutton
 )   
         except bad_request_400.MessageNotModified as e:
@@ -221,7 +221,7 @@ reply_markup = mbutton
 @app.on_message(filters.command("domains"))
 async def fakemailgen(_, message: Message):
     name = message.from_user.id
-    x = requests.get(f'https://www.1secmail.com/api/v1/?action=getDomainList').json()
+    x = requests.get(f'https://api.internal.temp-mail.io/api/v3/?action=getDomainList').json()
     xx = str(",".join(x))
     email = xx.replace(",", "\n")
     await app.send_message(
@@ -307,7 +307,7 @@ Want to promote your online business ? Want to get people engagement? We are her
 
 Promote whatever you want at lowest and affordable prices.
 
-https://t.me/mittalbots 
+https://t.me/Bot_update_i 
 
 🔥Your broadcast will reach group also so minimum 50k users see your message.
 """)
